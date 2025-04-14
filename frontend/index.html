@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma Ludothèque</title>
+  <link rel="stylesheet" href="styles.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuex@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-i18n@8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuex-persistedstate@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-axios@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-multiselect@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-toastification@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard2@0.3.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-draggable@2"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/vue-virtual-scroller@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard@1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-axios@3.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-async-computed@3.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-virtual-scroller@1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard2@0.3.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-virtual-scroller@1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard2@0.3.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-virtual-scroller@1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard2@0.3.1"></script> -->
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Ma Ludothèque</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#aléatoire">Aléatoire</a></li>
+                <li><a href="#ajouter">Ajouter un Jeu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>  
+        <div class="galerie" id="galerie">
+            <div class="carte" @click="ouvrirModaleJeu(jeu)">
+    
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+    <div class="modale" id="modale-jeu">
+
+    </div>
+
+    <div class="modale" id="modale-collection">
+
+    </div>
+</body>
+
+</html>
