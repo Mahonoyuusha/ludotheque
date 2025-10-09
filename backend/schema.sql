@@ -14,5 +14,8 @@ CREATE TABLE IF NOT EXISTS games (
   price_philibert NUMERIC,
   price_amazon NUMERIC,
   links JSONB, -- { "amazon": "...", "philibert": "..." }
-  qr_code_url TEXT
+  qr_code_url TEXT,
+  possessed BOOLEAN DEFAULT false,
+  wishlisted BOOLEAN DEFAULT true,
+  rules_pdf_url TEXT
 );

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin • Ma Ludothèque</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .admin-wrap { width: min(1200px, 96%); margin: 1rem auto; }
+      .admin-toolbar { display:flex; gap:.5rem; align-items:center; flex-wrap: wrap; margin-bottom: .75rem; }
+      .admin-toolbar input[type="password"], .admin-toolbar input[type="text"], .admin-toolbar select {
+        background: var(--card); color: var(--text); border:1px solid var(--border); border-radius:.5rem; padding:.4rem .6rem;
+      }
+      .admin-table { width:100%; border-collapse: collapse; font-size: .92rem; }
+      .admin-table th, .admin-table td { border-bottom:1px solid var(--border); padding:.5rem; vertical-align: top; }
+      .admin-table th { text-align:left; color: var(--muted); position: sticky; top:0; background: #0f172a; }
+      .admin-table input[type="text"], .admin-table input[type="number"] { width: 100%; background: var(--card); color: var(--text); border:1px solid var(--border); border-radius:.35rem; padding:.35rem .45rem; }
+      .admin-table .row-actions { display:flex; gap:.4rem; align-items:center; }
+      .status { color: var(--muted); font-size: .85rem; }
+      .pill { display:inline-block; padding:.1rem .4rem; border:1px solid var(--border); border-radius:.5rem; color: var(--muted); }
+      .nowrap { white-space:nowrap; }
+      .scroll-x { overflow-x: auto; }
+    </style>
+  </head>
+  <body>
+    <div class="admin-wrap">
+      <h1>Admin • Ma Ludothèque</h1>
+      <div class="admin-toolbar">
+        <label>Secret admin:</label>
+        <input id="secretInput" type="password" placeholder="ADMIN_SECRET" />
+        <button id="saveSecretBtn" class="btn-secondary">Enregistrer</button>
+        <span class="status" id="secretStatus"></span>
+        <span class="pill">Astuce: accédez à cette page via /admin.html</span>
+      </div>
+      <div class="admin-toolbar">
+        <select id="filterSelect">
+          <option value="all">Tous</option>
+          <option value="owned">Possédés</option>
+          <option value="wishlist">Wishlist</option>
+          <option value="none">Ni possédés ni wishlist</option>
+        </select>
+        <input id="q" type="text" placeholder="Filtrer par nom/texte..." />
+        <button id="refreshBtn" class="btn-secondary">Rafraîchir</button>
+        <button id="seedBtn" class="btn-secondary">Seed wishlist</button>
+        <button id="ogBtn" class="btn-secondary">Images depuis liens</button>
+        <button id="bggBtn" class="btn-secondary">Images depuis BGG</button>
+        <span class="status" id="opStatus"></span>
+      </div>
+      <div class="scroll-x">
+        <table class="admin-table" id="tbl">
+          <thead>
+            <tr>
+              <th class="nowrap">ID</th>
+              <th>Nom</th>
+              <th class="nowrap">Possédé</th>
+              <th class="nowrap">Wishlist</th>
+              <th class="nowrap">Durée</th>
+              <th class="nowrap">Min</th>
+              <th class="nowrap">Max</th>
+              <th>Prix Philibert</th>
+              <th>Lien Philibert</th>
+              <th>PDF Règles</th>
+              <th>Image URL</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="admin.js" defer></script>
+  </body>
+  </html>
+

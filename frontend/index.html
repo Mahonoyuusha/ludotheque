@@ -1,66 +1,48 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ma Ludothèque</title>
-  <link rel="stylesheet" href="styles.css">
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuex@3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-router@3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-i18n@8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuex-persistedstate@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-axios@3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-multiselect@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-toastification@1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard2@0.3.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-draggable@2"></script>    
-    <script src="https://cdn.jsdelivr.net/npm/vue-virtual-scroller@1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard@1.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-axios@3.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-async-computed@3.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-virtual-scroller@1.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard2@0.3.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-virtual-scroller@1.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard2@0.3.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-virtual-scroller@1.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-clipboard2@0.3.1"></script> -->
-    <script src="script.js"></script>
-</head>
-
-<body>
-
-    <header>
-        <h1>Ma Ludothèque</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ma Ludothèque</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="title">Ma Ludothèque</h1>
         <nav>
-            <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#aléatoire">Aléatoire</a></li>
-                <li><a href="#ajouter">Ajouter un Jeu</a></li>
-            </ul>
+          <ul class="nav">
+            <li><a id="homeLink" href="#home">Accueil</a></li>
+            <li><a id="ownedLink" href="#ludotheque">Ma Ludothèque</a></li>
+            <li><a id="wishlistLink" href="#wishlist">Wishlist</a></li>
+          </ul>
         </nav>
+      </div>
     </header>
 
-    <main>  
-        <div class="galerie" id="galerie">
-            <div class="carte" @click="ouvrirModaleJeu(jeu)">
-    
-            </div>
+    <main class="container">
+      <section class="toolbar">
+        <div class="toolbar-left" id="toolbar-left"></div>
+        <div class="toolbar-right" id="toolbar-right">
+          <input id="searchInput" class="search" type="search" placeholder="Rechercher un jeu..." />
         </div>
+      </section>
+      <section class="galerie" id="galerie"></section>
     </main>
 
-    <footer>
+    <div class="modale hidden" id="modale-jeu" aria-hidden="true">
+      <div class="modale-backdrop" id="modale-backdrop"></div>
+      <div class="modale-dialog" role="dialog" aria-modal="true">
+        <button class="modale-close" id="modale-close" aria-label="Fermer">×</button>
+        <div id="modale-content"></div>
+      </div>
+    </div>
+
+    <footer class="footer container">
+      <small>© Ma Ludothèque</small>
     </footer>
 
-    <div class="modale" id="modale-jeu">
-
-    </div>
-
-    <div class="modale" id="modale-collection">
-
-    </div>
-</body>
-
-</html>
+    <noscript>Activez JavaScript pour utiliser l'application.</noscript>
+    <script src="script.js" defer></script>
+  </body>
+  </html>
